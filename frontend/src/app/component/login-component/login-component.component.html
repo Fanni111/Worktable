@@ -1,0 +1,29 @@
+<link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+
+<form [formGroup]="loginForm" ngNativeValidate>
+  <h2 class="display-8">Login:</h2>  
+  <div class="form-group"> 
+    <label for="name">Username:</label>
+    <input 
+      class="form-control"
+      formControlName="name"
+      pattern="" 
+      required>
+  </div>
+
+  <div class="form-group">
+    <label for="pass">Password:</label>
+    <input 
+      class="form-control"
+      formControlName="pass"
+      type="password"
+      pattern="^[a-zA-Z0-9]{6,16}$"
+      required>
+  </div>
+
+  <div *ngIf="loginFailedMessage"><h3>{{loginFailedMessage}}</h3></div>
+  
+  <div>
+    <button (click)="submit()" class="btn btn-primary" [disabled]="!loginForm.valid">Login</button>
+  </div>
+</form>
