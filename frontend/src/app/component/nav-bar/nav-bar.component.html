@@ -1,0 +1,29 @@
+<nav class="navbar navbar-expand-lg navbar navbar-dark bg-primary">
+  <h1 class="navbar-brand mb-0">
+   Worktable
+  </h1>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="/">
+          Főoldal <i class="fa fa-home" aria-hidden="true"></i>
+          <span class="sr-only">(current)</span>
+        </a>
+      </li>
+
+      <li *ngIf="!userService.getUserLoggedIn()" class="nav-item">
+        <a class="nav-link" routerLink="/login">Login <i class="fa fa-login-ul" aria-hidden="true"></i></a>
+      </li>
+      <li *ngIf="!userService.getUserLoggedIn()" class="nav-item">
+        <a class="nav-link" routerLink="/registration">Register <i class="fa fa-register-ul" aria-hidden="true"></i></a>
+      </li>
+      <li *ngIf="userService.getUserLoggedIn()" class="nav-item">
+        <a class="nav-link" routerLink="/profile">Profile <i class="fa fa-profile-ul" aria-hidden="true"></i></a>
+      </li>
+      <li *ngIf="userService.getUserLoggedIn()" class="nav-item">
+        <a class="nav-link" routerLink="/" (click)="logout()">Logout <i class="fa fa-Logout-ul" aria-hidden="true"></i></a>
+      </li>
+    </ul>
+  </div>
+</nav>

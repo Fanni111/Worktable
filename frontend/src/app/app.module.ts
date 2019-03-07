@@ -8,13 +8,15 @@ import { UserService } from './service/user.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule  } from "@angular/common/http";
 import { ProfileComponent } from './component/profile/profile.component';
+import { NavBarComponent } from './component/nav-bar/nav-bar.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponentComponent,
-    ProfileComponent
+    ProfileComponent,
+    NavBarComponent
   ],
   imports: [
     BrowserModule,
