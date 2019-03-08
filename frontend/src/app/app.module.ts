@@ -3,20 +3,24 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LoginComponentComponent } from './component/login-component/login-component.component';
 import { UserService } from './service/user.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule  } from "@angular/common/http";
-import { ProfileComponent } from './component/profile/profile.component';
 import { NavBarComponent } from './component/nav-bar/nav-bar.component';
+import { ProfileFormComponent } from './component/profile-form/profile-form.component';
+import { ProfileComponent } from './page/profile/profile.component';
+import { LoginComponent } from './page/login/login.component';
+import { LoginFormComponent } from './component/login-form/login-form.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponentComponent,
+    NavBarComponent,
+    ProfileFormComponent,
     ProfileComponent,
-    NavBarComponent
+    LoginComponent,
+    LoginFormComponent
   ],
   imports: [
     BrowserModule,
