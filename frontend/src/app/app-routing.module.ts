@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { LoginComponentComponent } from './component/login-component/login-component.component';
-import { ProfileComponent } from './component/profile/profile.component';
+import { ProfileComponent } from "./page/profile/profile.component";
+import { LoginComponent } from './page/login/login.component';
 import { NavBarComponent } from "./component/nav-bar/nav-bar.component";
 
 const routes: Routes = [
@@ -16,7 +16,7 @@ const routes: Routes = [
   },
   {
     path: 'login',
-    component: LoginComponentComponent
+    component: LoginComponent
   },
   {
     path: 'profile',

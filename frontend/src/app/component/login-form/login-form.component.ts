@@ -1,16 +1,17 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { User } from '../../model/user';
 import { Router } from '@angular/router';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { UserService } from '../../service/user.service';
 
+
 @Component({
-  selector: 'app-login-component',
-  templateUrl: './login-component.component.html',
-  styleUrls: ['./login-component.component.css']
+  selector: 'login-form',
+  templateUrl: './login-form.component.html',
+  styleUrls: ['./login-form.component.css']
 })
-export class LoginComponentComponent implements OnInit {
+export class LoginFormComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
