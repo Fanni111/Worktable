@@ -11,6 +11,8 @@ import { ProfileFormComponent } from './component/profile-form/profile-form.comp
 import { ProfileComponent } from './page/profile/profile.component';
 import { LoginComponent } from './page/login/login.component';
 import { LoginFormComponent } from './component/login-form/login-form.component';
+import { RegistrationFormComponent } from './component/registration-form/registration-form.component';
+import { RegistrationComponent } from './page/registration/registration.component';
 
 
 @NgModule({
@@ -20,7 +22,9 @@ import { LoginFormComponent } from './component/login-form/login-form.component'
     ProfileFormComponent,
     ProfileComponent,
     LoginComponent,
-    LoginFormComponent
+    LoginFormComponent,
+    RegistrationFormComponent,
+    RegistrationComponent
   ],
   imports: [
     BrowserModule,
