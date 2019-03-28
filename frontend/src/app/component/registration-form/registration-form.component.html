@@ -1,0 +1,44 @@
+<link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+
+<form [formGroup]="registerForm" ngNativeValidate>
+  <h2 class="display-8">Registration:</h2>  
+  <div class="form-group"> 
+    <label for="name">Username:</label>
+    <input 
+      class="form-control"
+      formControlName="name"
+      pattern="" 
+      aria-describedby="nameHelp"
+      required>
+    <small id="nameHelp" class="form-text text-muted"></small>
+  </div>
+
+  <div class="form-group">
+    <label for="pass">Password:</label>
+    <input 
+      class="form-control"
+      formControlName="pass"
+      type="password"
+      pattern="^[a-zA-Z0-9]{6,16}$"
+      aria-describedby="passhelp"
+      required>
+    <small id="passhelp" class="form-text text-muted">Password must be between 6 and 16 characters and cannot contains special characters!</small>
+  </div>
+
+  <div class="form-group">
+    <label for="email">E-mail:</label>
+    <input 
+      class="form-control"
+      formControlName="email"
+      pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" 
+      aria-describedby="emailHelp"
+      required>
+    <small id="emailHelp" class="form-text text-muted">Valid email address. E.g. asd@asd.asd</small>
+  </div>
+
+  <div *ngIf="registrationFailedMessage"><h3>{{registrationFailedMessage}}</h3></div>
+  
+  <div>
+    <button (click)="submit()" class="btn btn-primary" [disabled]="!registerForm.valid">Register</button>
+  </div>
+</form>

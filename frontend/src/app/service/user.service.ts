@@ -14,7 +14,7 @@ const httpOptions = {
 })
 export class UserService {
 
-  //private url: string = "http://localhost:8080/users";
+  private url: string = "http://localhost:8080/users";
   isUserLoggedIn: boolean;
   user: User;
 
@@ -24,12 +24,12 @@ export class UserService {
   }
 
   async loginUser(user: User){
-    //this.user = await this.http.post<User>(this.url + '/login', JSON.stringify(user), httpOptions).toPromise();
+    this.user = await this.http.post<User>(this.url + '/login', JSON.stringify(user), httpOptions).toPromise();
     this.isUserLoggedIn = true;
   }
 
-  /*async*/ registerUser(user: User) /*:Promise<void>*/{
-    //this.user = await this.http.post<User>(this.url + '/register', JSON.stringify(user), httpOptions).toPromise();
+  async registerUser(user: User) :Promise<void>{
+    this.user = await this.http.post<User>(this.url + '/register', JSON.stringify(user), httpOptions).toPromise();
     this.isUserLoggedIn = true;
   }
 
@@ -44,11 +44,11 @@ export class UserService {
   }
 
   isUserRoleWorker(): boolean{
-    return this.isUserLoggedIn && this.user.role == "WORKER";
+    return this.isUserLoggedIn && this.user.role == "ROLE_USER";
   }
 
   isUserRoleBoss(): boolean{
-    return this.isUserLoggedIn && this.user.role == "BOSS";
+    return this.isUserLoggedIn && this.user.role == "ROLE_OWNER";
   }
 
   logout(){
