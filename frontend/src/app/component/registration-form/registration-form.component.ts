@@ -39,9 +39,9 @@ export class RegistrationFormComponent implements OnInit {
   submit() {
     //Model értékének beállítása:
     this.model = new User();
-    this.model.password = this.registerForm.value.pass;
     this.model.username = this.registerForm.value.name;
-    this.model.email = this.registerForm.value.email;
+    this.model.password = this.registerForm.value.pass;
+    
     console.log(JSON.stringify(this.model));
 
     this.userService.registerUser(this.model)

@@ -13,6 +13,10 @@ import { UserService } from '../../service/user.service';
 })
 export class LoginFormComponent implements OnInit {
 
+  loginFailedMessage: String;
+  loginForm: FormGroup;
+  model: User;
+
   constructor(
     private fb: FormBuilder,
     private http: HttpClient,
@@ -32,20 +36,19 @@ export class LoginFormComponent implements OnInit {
     });
   }
 
-  loginFailedMessage: String;
-  loginForm: FormGroup;
-  model: User;
 
   submit(){
     if(this.userService.getUserLoggedIn()){
       this.loginFailedMessage = "I won't let you login again...";
       return;
     }
+    
     //Model értékének beállítása:
     this.model = new User();
     this.model.username = this.loginForm.value.name;
     this.model.password = this.loginForm.value.pass;
-    this.model.role = "WORKER";
+    console.log("Submituser: "+ this.model.username);
+    console.log("Submit model: "+this.model);
     this.userService.loginUser(this.model)
     .then(() => {
       this.router.navigateByUrl('/profile');

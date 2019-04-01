@@ -17,6 +17,8 @@ export class ProfileFormComponent implements OnInit {
   constructor(private userService: UserService) { 
     this.user = userService.getThisUser();
     this.username = this.user.username;
+    console.log("This: "+ this.username +" and: "+ this.user.username);
+    this.email = this.user.email;
     this.role = this.user.role;
   }
 
