@@ -42,6 +42,7 @@ export class LoginFormComponent implements OnInit {
       this.loginFailedMessage = "I won't let you login again...";
       return;
     }
+    
     //Model értékének beállítása:
     this.model = new User();
     this.model.username = this.loginForm.value.name;

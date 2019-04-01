@@ -41,7 +41,7 @@ export class RegistrationFormComponent implements OnInit {
     this.model = new User();
     this.model.username = this.registerForm.value.name;
     this.model.password = this.registerForm.value.pass;
-    this.model.email = this.registerForm.value.email;
+    
     console.log(JSON.stringify(this.model));
 
     this.userService.registerUser(this.model)
