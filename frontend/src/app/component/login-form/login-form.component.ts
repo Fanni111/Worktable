@@ -43,8 +43,8 @@ export class LoginFormComponent implements OnInit {
     }
     //Model értékének beállítása:
     this.model = new User();
+    this.model.username = this.loginForm.value.name;
     this.model.password = this.loginForm.value.pass;
-    this.model.name = this.loginForm.value.name;
     this.model.role = "WORKER";
     this.userService.loginUser(this.model)
     .then(() => {

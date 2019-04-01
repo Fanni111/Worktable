@@ -10,13 +10,13 @@ import { User } from '../../model/user';
 export class ProfileFormComponent implements OnInit {
 
   public user: User;
-  public name: String;
+  public username: String;
   public email: String;
   public role: String;
 
   constructor(private userService: UserService) { 
     this.user = userService.getThisUser();
-    this.name = this.user.name;
+    this.username = this.user.username;
     this.role = this.user.role;
   }
 
