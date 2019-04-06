@@ -1,1 +1,4 @@
-language: TypeScript
+language: java
+
+jdk:
+  - oraclejdk8
