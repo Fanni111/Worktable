@@ -2,8 +2,20 @@ matrix:
   include:
     - language: java
       jdk: oraclejdk8
-      
-    - language: bash
-      sudo: true
+      install:
+      - mvn -N io.takari:maven:wrapper
+      - ./mvnw install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+
       script:
-      - bash ci_script.sh
+      - ./mvnw test -B
+
+    - language: node_js
+      node_js:
+      - "9"
+      dist: trusty
+      sudo: required
+      branches:
+        only:
+        - frontend_development
+      before_script:
+      - npm install -g @angular/cli
