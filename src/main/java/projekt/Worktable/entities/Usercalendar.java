@@ -8,44 +8,31 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.List;
 
 @Entity
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode
-public class User implements Serializable {
+public class Usercalendar implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(unique = true)
-    private String username;
+    @Column(nullable = false)
+    private Integer totalFreeDays;
 
     @Column(nullable = false)
-    private String password;
+    private String reason;
 
     @Column(nullable = false)
-    private boolean enabled;
-
-    @Column(nullable = false)
-    @Enumerated(EnumType.STRING)
-    private Role role;
-
-    public enum Role {
-        ROLE_OWNER, ROLE_USER
-    }
+    private String response;
 
     @Column(nullable = true)
-    private String img;
+    private boolean acceptOrDecline;
 
-    @Column(nullable = true)
-    private String email;
-
-    @OneToMany(mappedBy = "user")
+    @ManyToOne
+    @JoinColumn
     @JsonIgnore
-    private List<Usercalendar> userCalendar;
+    private User user;
 }
-
-

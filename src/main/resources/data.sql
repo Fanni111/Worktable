@@ -10,3 +10,7 @@ insert into user(username, password, enabled, role, img, email) values (
   'user2', '$2a$04$YDiv9c./ytEGZQopFfExoOgGlJL6/o0er0K.hiGb5TGKHUL8Ebn..', true, 'ROLE_USER', '/assets/images/img3.jpg', 'asd@gmail.com');
 insert into user(username, password, enabled, role, img, email) values (
   'user3', '$2a$04$YDiv9c./ytEGZQopFfExoOgGlJL6/o0er0K.hiGb5TGKHUL8Ebn..', true, 'ROLE_USER', '/assets/images/img3.jpg', 'asd@gmail.com');
+
+
+insert into usercalendar(user_id, total_free_days, reason, response, accept_or_decline) values
+ (1, 30, 'This is the reason', 'This is the response', true);
