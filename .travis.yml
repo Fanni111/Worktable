@@ -2,6 +2,7 @@ matrix:
   include:
     - language: java
       jdk: oraclejdk8
+      name: "Java server"
       install:
       - mvn -N io.takari:maven:wrapper
       - ./mvnw install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
@@ -12,6 +13,7 @@ matrix:
     - language: node_js
       node_js:
       - "9"
+      name: "Frontend"
       dist: trusty
       sudo: required
       branches:
@@ -19,3 +21,6 @@ matrix:
         - frontend_development
       before_script:
       - npm install -g @angular/cli
+
+      deploy:
+      - ng build
