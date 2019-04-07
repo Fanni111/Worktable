@@ -1,7 +1,4 @@
-language: java
+language: bash
 sudo: true
-jdk:
-  - oraclejdk8
-install:
-- mvn -N io.takari:maven:wrapper
-- ./mvnw install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+script:
+    - bash ci_script.sh
