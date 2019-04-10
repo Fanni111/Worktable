@@ -20,6 +20,8 @@ import { DateTimePickerComponent } from './component/date-time-picker/date-time-
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { library as fontLibrary } from '@fortawesome/fontawesome-svg-core';
 import { faCalendar,  faClock } from '@fortawesome/free-regular-svg-icons';
+import { CalendarViewComponent } from './component/calendar-view/calendar-view.component';
+
 fontLibrary.add(
   faCalendar,
   faClock
@@ -36,7 +38,8 @@ fontLibrary.add(
     RegistrationFormComponent,
     RegistrationComponent,
     CalendarComponent,
-    DateTimePickerComponent
+    DateTimePickerComponent,
+    CalendarViewComponent
 
   ],
   imports: [
