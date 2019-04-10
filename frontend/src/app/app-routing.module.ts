@@ -4,6 +4,7 @@ import { ProfileComponent } from "./page/profile/profile.component";
 import { LoginComponent } from './page/login/login.component';
 import { NavBarComponent } from "./component/nav-bar/nav-bar.component";
 import { RegistrationComponent } from "./page/registration/registration.component";
+import { CalendarComponent } from './page/calendar/calendar.component';
 
 const routes: Routes = [
   {
@@ -26,6 +27,10 @@ const routes: Routes = [
   {
     path: 'registration',
     component: RegistrationComponent
+  },
+  {
+    path: 'calendar',
+    component: CalendarComponent
   }
 
 ];

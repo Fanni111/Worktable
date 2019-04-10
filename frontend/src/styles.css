@@ -3,3 +3,28 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: 'Roboto', sans-serif; }
+
+.navbar-nav a{
+    color: white;
+  
+}
+.navbar-nav a.active-link{
+    color:white;
+    text-decoration: underline;
+} 
+
+.navbar-nav li{
+    display: inline;
+    padding-right: 20px;
+}
+
+
+/*
+.navbar-nav > .active > a {
+    color: white;   
+  }
+
+
+  .nav-item > a:hover {
+    color: aqua;
+  }*/

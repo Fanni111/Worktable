@@ -4,26 +4,30 @@
   </h1>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" routerLink="/">
-          Főoldal <i class="fa fa-home" aria-hidden="true"></i>
-          <span class="sr-only">(current)</span>
-        </a>
-      </li>
+    <ul class="navbar-nav">
+      <li *ngIf="!userService.getUserLoggedIn()" class="nav-item">
+        <a routerLink="/" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:
+          true}">Home</a>
+      
+      <li *ngIf="!userService.getUserLoggedIn()" class="nav-item">
+        <a routerLink="/login" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:
+          true}">Login</a>
+      
+      <li *ngIf="!userService.getUserLoggedIn()" class="nav-item">
+        <a routerLink="/registration" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:
+          true}">Register</a>
 
-      <li *ngIf="!userService.getUserLoggedIn()" class="nav-item">
-        <a class="nav-link" routerLink="/login">Login <i class="fa fa-login-ul" aria-hidden="true"></i></a>
-      </li>
-      <li *ngIf="!userService.getUserLoggedIn()" class="nav-item">
-        <a class="nav-link" routerLink="/registration">Register <i class="fa fa-register-ul" aria-hidden="true"></i></a>
-      </li>
       <li *ngIf="userService.getUserLoggedIn()" class="nav-item">
-        <a class="nav-link" routerLink="/profile">Profile <i class="fa fa-profile-ul" aria-hidden="true"></i></a>
-      </li>
+        <a routerLink="/profile" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:
+          true}">Profile</a>
+      
       <li *ngIf="userService.getUserLoggedIn()" class="nav-item">
-        <a class="nav-link" routerLink="/" (click)="logout()">Logout <i class="fa fa-Logout-ul" aria-hidden="true"></i></a>
-      </li>
+        <a routerLink="/calendar" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:
+          true}">Calendar</a>
+      
+      <li *ngIf="userService.getUserLoggedIn()" class="nav-item">
+        <a routerLink="/" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:
+          true}" (click)="logout()">Logout</a>
     </ul>
   </div>
 </nav>
