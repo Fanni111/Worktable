@@ -12,11 +12,18 @@ import projekt.Worktable.repositories.UserCalendarRepository;
 @CrossOrigin
 @RestController
 @RequestMapping("/usercalendar")
+/**
+ * This is a controller for users' calendar.
+ * You can get-(, post- and put) mapping
+ */
 public class UserCalendarController {
     @Autowired
     private UserCalendarRepository calendarRepository;
 
-
+    /**
+     * This is a get mapping for all calendars.
+     * @return a ResponseEntity
+     */
     @GetMapping("")
     public ResponseEntity<Iterable<Usercalendar>> getAll() {
         return ResponseEntity.ok(calendarRepository.findAll());
