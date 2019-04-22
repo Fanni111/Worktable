@@ -12,7 +12,7 @@ matrix:
       - ./mvnw test -B
 
       after_script:
-      -  javadoc -d "doc/backend" -sourcepath src/main/java -subpackages .
+      -  javadoc -d "./doc/backend" -sourcepath src/main/java -subpackages .
 
     - language: node_js
       node_js:
