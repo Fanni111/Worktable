@@ -14,6 +14,9 @@ import java.io.Serializable;
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode
+/**
+ * This is a UserCalendar Entity class. It has all the calendar's attributes
+ */
 public class Usercalendar implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
