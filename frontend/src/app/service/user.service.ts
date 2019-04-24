@@ -29,7 +29,7 @@ export class UserService {
     //this.user = user;
     this.user = await this.http.post<User>(this.url + '/login', JSON.stringify(user), httpOptions).toPromise();
     this.isUserLoggedIn = true;
-    console.log("USER: "+this.user);
+    /*console.log("USER: "+this.user);*/
   }
 
   async registerUser(user: User) /*:Promise<void>*/{

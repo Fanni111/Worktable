@@ -24,10 +24,10 @@ import {
     DateAdapter
 } from 'angular-calendar';
 
-import { AppService } from './services/app.service';
+import { AppService } from './calendar-service';
 
 @Component({
-  selector: 'app-calendar-view',
+  selector: 'calendar-view',
   templateUrl: './calendar-view.component.html',
   styleUrls: ['./calendar-view.component.css'],
     providers: [{
@@ -120,11 +120,11 @@ export class CalendarViewComponent implements OnInit {
 
     dateOrViewChanged(): void {
         if (this.startsWithToday) {
-            this.prevBtnDisabled = !this.isDateValid(subPeriod(this.dateAdapter, this.view, this.viewDate, 1));
-            this.nextBtnDisabled = !this.isDateValid(addPeriod(this.dateAdapter, this.view, this.viewDate, 1));
+            this.prevBtnDisabled = !this.isDateValid(subPeriod(/*this.dateAdapter,*/ this.view, this.viewDate, 1));
+            this.nextBtnDisabled = !this.isDateValid(addPeriod(/*this.dateAdapter,*/ this.view, this.viewDate, 1));
         } else {
-            this.prevBtnDisabled = !this.isDateValid(endOfPeriod(this.dateAdapter, this.view, subPeriod(this.dateAdapter, this.view, this.viewDate, 1)));
-            this.nextBtnDisabled = !this.isDateValid(startOfPeriod(this.dateAdapter, this.view, addPeriod(this.dateAdapter, this.view, this.viewDate, 1)));
+            this.prevBtnDisabled = !this.isDateValid(endOfPeriod(/*this.dateAdapter, */this.view, subPeriod(/*this.dateAdapter,*/ this.view, this.viewDate, 1)));
+            this.nextBtnDisabled = !this.isDateValid(startOfPeriod(/*this.dateAdapter,*/ this.view, addPeriod(/*this.dateAdapter,*/ this.view, this.viewDate, 1)));
         }
 
         if (this.viewDate < this.minDate) {

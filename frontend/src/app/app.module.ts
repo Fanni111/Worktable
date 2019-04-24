@@ -22,6 +22,18 @@ import { library as fontLibrary } from '@fortawesome/fontawesome-svg-core';
 import { faCalendar,  faClock } from '@fortawesome/free-regular-svg-icons';
 import { CalendarViewComponent } from './component/calendar-view/calendar-view.component';
 
+//új cal-viewhoz
+import { CalendarModule, DateAdapter } from 'angular-calendar';
+import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
+import { SchedulerModule } from 'angular-calendar-scheduler';
+import { AppService } from './component/calendar-view/calendar-service';
+import { MatProgressSpinnerModule } from '@angular/material';
+import {LOCALE_ID } from '@angular/core';
+
+import {OverlayContainer} from "@angular/cdk/overlay";
+
+
+
 fontLibrary.add(
   faCalendar,
   faClock
@@ -51,8 +63,28 @@ fontLibrary.add(
 
     NgbModule.forRoot(),
     FontAwesomeModule,
+
+    //új calendar-viewhoz
+    CalendarModule.forRoot({
+      provide: DateAdapter,
+      useFactory: adapterFactory
+    }),
+    SchedulerModule.forRoot({ locale: 'en', headerDateFormat: 'daysRange' }),
+    MatProgressSpinnerModule
+
+
+
   ],
-  providers: [UserService],
+  providers: [
+    UserService,
+  //új calendar-viewhoz
+  AppService,
+    { provide: LOCALE_ID, useValue: 'en-US' },
+
+
+    /*UserService,
+    {provide: UserService, userclass: UserService}*/
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

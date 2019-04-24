@@ -110,7 +110,7 @@ export class DateTimePickerComponent implements ControlValueAccessor, OnInit, Af
         }
     }
 
-    onDateChange($event: string | NgbDateStruct) {        
+    onDateChange($event: string)/* | NgbDateStruct)*/ {        
         if ($event.year){
           $event = `${$event.year}-${$event.month}-${$event.day}`
         }
