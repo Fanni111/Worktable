@@ -6,7 +6,7 @@ matrix:
         sonarcloud:
           organization: "fanni111-github"
           token:
-            secure: hGvESG1hPf0OLAa21hqWeLCOGVja7gfMawrvFKOiGuPVBUNfYKoC9v1+VVUz7UxOHfnLUr/P0Fbh3MGmIY+Sxg==
+            secure: b8f70f4226c24fef2193e45b54dcf6c327f0dd09
 
       jdk: oraclejdk8
       name: "Java server"
