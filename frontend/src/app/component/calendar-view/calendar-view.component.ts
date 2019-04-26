@@ -60,6 +60,8 @@ export class CalendarViewComponent implements OnInit {
     prevBtnDisabled: boolean = false;
     nextBtnDisabled: boolean = false;
 
+    
+
     actions: CalendarSchedulerEventAction[] = [
         {
             when: 'enabled',
@@ -82,6 +84,7 @@ export class CalendarViewComponent implements OnInit {
     events: CalendarSchedulerEvent[];
 
     constructor(@Inject(LOCALE_ID) locale: string, private appService: AppService, private dateAdapter: DateAdapter) {
+
         this.locale = locale;
 
         // this.dayModifier = ((day: SchedulerViewDay): void => {
@@ -165,4 +168,6 @@ export class CalendarViewComponent implements OnInit {
         ev.end = newEnd;
         this.refresh.next();
     }
+
+
 }
