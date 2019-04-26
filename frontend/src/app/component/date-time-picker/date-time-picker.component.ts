@@ -4,6 +4,9 @@ import { NG_VALUE_ACCESSOR, ControlValueAccessor, NgControl } from '@angular/for
 import { DatePipe } from '@angular/common';
 import { DateTimeModel } from './date-time.model';
 import { noop } from 'rxjs';
+import { Calendar } from 'src/app/model/calendar';
+import { CalendarService } from 'src/app/service/calendar.service';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-date-time-picker',
@@ -52,7 +55,10 @@ export class DateTimePickerComponent implements ControlValueAccessor, OnInit, Af
 
     private ngControl: NgControl;
 
-    constructor(private config: NgbPopoverConfig, private inj: Injector ) {
+    //extra variables for calendar-model
+    model: Calendar;
+
+    constructor(private config: NgbPopoverConfig, private inj: Injector, private calendarSerice: CalendarService, private router: Router) {
         config.autoClose = 'outside';
         config.placement = 'auto';
     }
@@ -160,5 +166,25 @@ export class DateTimePickerComponent implements ControlValueAccessor, OnInit, Af
 
     inputBlur($event) {
         this.onTouched();
+    }
+
+    /*Submitting date and send to backend */
+    submit(){
+        
+        //Model értékének beállítása:
+        this.model = new Calendar();
+        this.model.startDate = this.dateString;
+        this.model.endDate = this.dateString;
+
+        console.log("Sending startdate: "+this.dateString);
+
+        this.calendarSerice.addStartDate(this.model)
+        .then(() => {
+        //this.router.navigateByUrl('/calendar');
+        })
+        .catch(() => {
+            console.log("Calendar pick failed");
+        });
+
     }
 }
