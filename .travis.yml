@@ -8,7 +8,7 @@ matrix:
         organization: fanni111-github
         token:
            secure: "WJ0/mmASCw1d4NV0Pcc0uUc/hsWf7/lSy0LmWHco7dB1rkiYdD3KdGzEckntfFfOHzr7RY4Dqxq7p57AMiQ5AcF5Z3PPydMShqRi4+9EJrmeFSfY67C3IQ8JSRgj25FSOyDYNyM+UkBwydEmGnYFmpY+T0Rcs1k+RE8e32tXII8EVld5wEa998RPgMDnzbwmdlKKAFZcw1kjjD4C9iNoxP89KZ7YQYcmfv2iuwEgg4L8YNmBvxrMfZLh5w+gmyAkfDTJQ6ZF58D7c5UXwmsHOUeU1q0HE8PTJzqykpsAgbpu9UHefWdWi4aP0yKwtYHRjmNaDR/GlN2sJFNOAofDHWqmsM63aFEqwTmwWUFl6eNUPRycS/aWDXMuPvMm3p+EuDTkPqQTryOwCrw3L0NS3qlEQLh3LD5BUKsMsF/4CrfUF0QHN5hQQH6F3gTaneGPdkYfQiU3ekS8lQSLAC9IgCiWK/kJUw18aasr6G5W/jDZFrqQkctkUo59v97ev8ehHKdxxeI8iCvnBcb+KZ0XCHAHsMi9NzKGfWTHdT4Dmm2FeIGUTDwmIArPXQZ2WQCx9cfEAen7lPqmjJ7/3Iawsay/Np7D1oMu2tiQ2PtIUpYyL0i3zPkq2GAxNKfp2gI17gJVf1AGlKbXstD3uz68rpP+j/KhyXd5Amso9PMnWGA="
-    install:  Fanni111/Worktable
+    install:
     - mvn -N io.takari:maven:wrapper
     - "./mvnw install -DskipTests=true -Dmaven.javadoc.skip=true -B -V"
     script:
