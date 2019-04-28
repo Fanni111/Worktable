@@ -19,6 +19,8 @@ matrix:
     - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar
 
     after_success:
+    - git config --global user.email "marthipeti1996@gmail.com"
+    - git config --global user.name "marthipeti"
     - git rm -rf ./doc/backend
     - mkdir -p ./doc/backend
     - javadoc -d "./doc/backend" -sourcepath src/main/java -subpackages .
