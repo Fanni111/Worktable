@@ -9,12 +9,16 @@
   #git clone --quiet --branch=master https://${GH_TOKEN}@github.com/gelin/gelin.github.io gh-pages > /dev/null
 
   cd gh-pages
-  #git rm -rf ./travis-javadoc-test/apidocs
-  #mkdir -p ./travis-javadoc-test/apidocs
-  #cp -Rf $HOME/apidocs ./travis-javadoc-test
-  #git add -f .
-  #git commit -m "Latest javadoc on successful travis build $TRAVIS_BUILD_NUMBER auto-pushed to gh-pages"
-  #git push -fq origin master > /dev/null
+  
+  git rm -rf ./doc/backend
+  mkdir -p ./doc/backend
+  javadoc -private -d "./doc/backend" -sourcepath src/main/java -subpackages .
+  git add -f .
+  git commit -m "Latest javadoc on successful travis build $TRAVIS_BUILD_NUMBER"
+  git push -fq origin master
+
+
+javadoc -private -d "./doc/backend" -sourcepath src/main/java -subpackages .
 
   echo "Published Javadoc to gh-pages."
 

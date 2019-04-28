@@ -19,7 +19,13 @@ matrix:
     - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar
 
     after_success:
-    -  javadoc -private -d "./doc/backend" -sourcepath src/main/java -subpackages .
+    - git rm -rf ./doc/backend
+    - mkdir -p ./doc/backend
+    - javadoc -d "./doc/backend" -sourcepath src/main/java -subpackages .
+    - git add -f .
+    - git commit -m "Latest javadoc on successful travis build $TRAVIS_BUILD_NUMBER"
+    - git push -fq origin master
+  
     #- ./javadoc.sh
 
   - language: node_js
