@@ -1,12 +1,13 @@
 matrix:
+  dist: trusty
+  addons:
+    sonarcloud:
+      organization: "fanni111-github"
+      token:
+        secure: b8f70f4226c24fef2193e45b54dcf6c327f0dd09
+        
   include:
     - language: java
-      dist: trusty
-      addons:
-        sonarcloud:
-          organization: "fanni111-github"
-          token:
-            secure: b8f70f4226c24fef2193e45b54dcf6c327f0dd09
 
       jdk: oraclejdk8
       name: "Java server"
