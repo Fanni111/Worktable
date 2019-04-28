@@ -4,8 +4,8 @@
 
   cd $HOME
   echo $HOME
-  #git config --global user.email "travis@travis-ci.org"
-  #git config --global user.name "travis-ci"
+    git config --global user.email "marthipeti1996@gmail.com"
+    git config --global user.name "peti_marthi"
   #git clone --quiet --branch=master https://${GH_TOKEN}@github.com/gelin/gelin.github.io gh-pages > /dev/null
 
   cd gh-pages
