@@ -17,6 +17,9 @@ matrix:
     after_script:
     - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar
 
+    after_success:
+    - ./javadoc.sh
+
   - language: node_js
     node_js:
     - '9'
