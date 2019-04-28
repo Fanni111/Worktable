@@ -1,16 +1,18 @@
 matrix:
   dist: trusty
-  addons:
-    sonarcloud:
-      organization: "fanni111-github"
-      token:
-        secure: b8f70f4226c24fef2193e45b54dcf6c327f0dd09
-        
+
+
   include:
     - language: java
 
       jdk: oraclejdk8
       name: "Java server"
+
+      addons:
+        sonarcloud:
+          organization: "fanni111-github"
+        token:
+          secure: b8f70f4226c24fef2193e45b54dcf6c327f0dd09
       install:
       - mvn -N io.takari:maven:wrapper
       - ./mvnw install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
