@@ -15,7 +15,7 @@ matrix:
     - "./mvnw test -B"
     - javadoc -d "./doc/backend" -sourcepath src/main/java -subpackages .
     after_script:
-    - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar
+    - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar -Dsonar.login=PgmFQLZ5Q4oqVer1Fz8pX/8zQCBszV9JALZXSjsDnQdmLFYrts8U+Kg5da9s7jSg39B2XH9AMDrqxnWdsuiVvOgG728XoKGdIPhm09TK6AGzycKEWk1PEvqJTRNOb7lLhAe1ejxmaUT3mzfzVgRINatqf3/ochdGtbO6lm/tU/qc6AimNec9WksuACpr05bGEpjdAP998wFpGWu7rA4ZqitBrBj8OSemuk/tP+loRh8AF+H18VsWodUJFdVcN3p9czYckN9/w9xsDRDPQHvgH+9g2UstofjEGrO0rvul4N/SWo0QS/xpjbYi4ULHe5m6gesKLxeyHSB56efRfd7z5JYyK4/RG+IxImC6cQ6z7unesYbUMjN1a2jYvCMBpdfXCXi0Y7D0LrSF1m/xnPlk0Ye6ttA0yMQ6ZhxNHKCD7/nF+p3V8cBuv8ZD/k/rZKic48dT1cYvyEN+WDZfgJGi6+T8mRTRPSmmr2UHHZAsArJdwOwtouAW+WukceOWPrVp8fc4f2BMvlDgfbnQKMRdjzUOzT91GB8Td6vT8o5woH5OtgOEXLGrgnwWOeNDbM0dNTHy29hibtAWlBbuzAzkKw5y1ap3VXYkQFjfSScXvg+7QcEGAqX0V9hgxqFNjFr5TB6HhTGM6fhzYYe9R+D0/elo2F5r7Vyaf+1+q+9Xg18=
 
   - language: node_js
     node_js:
