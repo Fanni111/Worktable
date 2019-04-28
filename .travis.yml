@@ -11,6 +11,7 @@ matrix:
       addons:
         sonarcloud:
           organization: "fanni111-github"
+          secure: "wGa6+cGHR2ZqR2hP8aDMOa6eqIZbHl4VqpOQ+giGuzZ2FGFTYufNcpZezyaySxMwyl1y1aMcHKp//a2SgBtTHMLbuhnLPLOl9F8YODk2OmM+iSuioFUBdLlMV9NhNypAIVUXBJGLTJzcvDJaPYIm61o51dH7JrsEy02Y2HOeo9bHD0XG2XFwlZpwPHdVKq4xA3D9w1nzk//chCBjSDv5zzKj+n0wG8aw/yxDD12KRGHZeU6EhQR4yGAQ6+6FQd+yoLk+ySG+Ex/UE+yEG+fjuSZ2Avnve0gcsV58E0E53GOQ9a02C3s0eLA3H0mWMjCPfrq0GYSrf9ldEB7jlGJXPPxjHlA7HW17LNR0oEJWcjfpuA6HlnaaV1WsXdmlncJIi1pMl9tw06Zq7NJmFT1Xv70okI8N5b0lzfZ+1G6B7K5F/lrla8WXatUT0NXk6c0zaqpp4+RLCP2IYx7xJk1EIUrzoh/nGSczKpweZgQjk0ukXPO7E35wyeb2ZC0Zl/PcTK/WxUakjhe441pJw+cqwxF/lq6cxqseXX2Fcoaz7RRo40kBZtfcJXcovfF76Y7B8ZEElmy0JRFtSMsxRpYxiIvgKL1xKjc1QVoA50Bm7YGNwAxsg3yGnFGNA1Kc4yC4QLWrhiWu/b6ACYmteLqc3SE7ODBgsBCjy/nOdVArhKE="
 
       install:
       - mvn -N io.takari:maven:wrapper
@@ -18,7 +19,7 @@ matrix:
 
       script:
       - ./mvnw test -B
-      - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar -Dsonar.login=${WORKTABLE_TOKEN}
+      - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar 
       #- mvn sonar:sonar \
       # -Dsonar.projectKey=Fanni111_Worktable \
       # -Dsonar.organization=fanni111-github \
