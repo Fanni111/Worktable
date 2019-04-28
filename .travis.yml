@@ -1,11 +1,13 @@
 matrix:
   include:
     language: java
+    dist: trusty
+    addons:
     addons:
       sonarcloud:
         organization: "fanni111-github"
         token:
-          secure: 61dbbb584c4cbabf590c2fc1fc27cd2b825a6b6a
+          secure: 4bc6d8cbe3bb622562bac8af6a75cff5a6b56557
     jdk: oraclejdk8
     name: "Java server"
     install:
@@ -15,14 +17,15 @@ matrix:
 
     script:
     - ./mvnw test -B
+    - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar
     #- mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar -Dsonar.projectKey=Fanni111_Worktable -Dsonar.organization=fanni111-github -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=61dbbb584c4cbabf590c2fc1fc27cd2b825a6b6a
 
     after_script:
-    - mvn sonar:sonar \
-        -Dsonar.projectKey=Fanni111_Worktable \
-        -Dsonar.organization=fanni111-github \
-        -Dsonar.host.url=https://sonarcloud.io \
-        -Dsonar.login=4bc6d8cbe3bb622562bac8af6a75cff5a6b56557
+    #- mvn sonar:sonar \
+    #    -Dsonar.projectKey=Fanni111_Worktable \
+    #   -Dsonar.organization=fanni111-github \
+    #   -Dsonar.host.url=https://sonarcloud.io \
+    #   -Dsonar.login=4bc6d8cbe3bb622562bac8af6a75cff5a6b56557
     -  javadoc -d "./doc/backend" -sourcepath src/main/java -subpackages .
 
     language: node_js
