@@ -21,7 +21,7 @@ matrix:
       - mvn sonar:sonar \
        -Dsonar.projectKey=Fanni111_Worktable \
        -Dsonar.organization=fanni111-github \
-       -Dsonar.host.url=https://sonarcloud.io \
+       -Dsonar.host.url="https://sonarcloud.io" \
        -Dsonar.login=b8f70f4226c24fef2193e45b54dcf6c327f0dd09
 
       after_script:
