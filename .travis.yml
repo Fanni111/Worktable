@@ -1,7 +1,7 @@
 matrix:
   include:
     - language: java
-
+      dist: trusty
       addons:
         sonarcloud:
           organization: "fanni111-github"
@@ -17,7 +17,7 @@ matrix:
 
       script:
       - ./mvnw test -B
-      
+      - sonar-scanner
       #- mvn sonar:sonar \
       # -Dsonar.projectKey=Fanni111_Worktable \
       # -Dsonar.organization=fanni111-github \
@@ -25,7 +25,7 @@ matrix:
       # -Dsonar.login=b8f70f4226c24fef2193e45b54dcf6c327f0dd09
 
       after_script:
-      - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar
+      #- mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar
       -  javadoc -d "./doc/backend" -sourcepath src/main/java -subpackages .
 
     - language: node_js
