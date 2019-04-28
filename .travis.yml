@@ -7,7 +7,7 @@ matrix:
       sonarcloud:
         organization: fanni111-github
         token:
-           secure: "WJ0/mmASCw1d4NV0Pcc0uUc/hsWf7/lSy0LmWHco7dB1rkiYdD3KdGzEckntfFfOHzr7RY4Dqxq7p57AMiQ5AcF5Z3PPydMShqRi4+9EJrmeFSfY67C3IQ8JSRgj25FSOyDYNyM+UkBwydEmGnYFmpY+T0Rcs1k+RE8e32tXII8EVld5wEa998RPgMDnzbwmdlKKAFZcw1kjjD4C9iNoxP89KZ7YQYcmfv2iuwEgg4L8YNmBvxrMfZLh5w+gmyAkfDTJQ6ZF58D7c5UXwmsHOUeU1q0HE8PTJzqykpsAgbpu9UHefWdWi4aP0yKwtYHRjmNaDR/GlN2sJFNOAofDHWqmsM63aFEqwTmwWUFl6eNUPRycS/aWDXMuPvMm3p+EuDTkPqQTryOwCrw3L0NS3qlEQLh3LD5BUKsMsF/4CrfUF0QHN5hQQH6F3gTaneGPdkYfQiU3ekS8lQSLAC9IgCiWK/kJUw18aasr6G5W/jDZFrqQkctkUo59v97ev8ehHKdxxeI8iCvnBcb+KZ0XCHAHsMi9NzKGfWTHdT4Dmm2FeIGUTDwmIArPXQZ2WQCx9cfEAen7lPqmjJ7/3Iawsay/Np7D1oMu2tiQ2PtIUpYyL0i3zPkq2GAxNKfp2gI17gJVf1AGlKbXstD3uz68rpP+j/KhyXd5Amso9PMnWGA="
+           secure: "BtDhFL/16UN/yqjK0o5fVPyPUFqRfmQutAkSWcmPQEsmAfLp66MAHnItEsPH2i99B0exmAlB9PyUB/3uxMPjnJCL6UinpbFgfBk1BM/Ihrjv276beXhwUTiN0ZL2vNdFsXQojki4Lm4GrVQJ8b1Jz0DMMK4xSc1jBWLs8jkOAKJN11ZfXg2e6u3yhE5IeJxyauBcb+h2KpRJHdIucJOA5LDYzJZSXykAcqp6pdnkbRLZ6OJ5tiVXSHPQy4bvO5b1UrlcyU6D+0tDcNipD1qtnC22FaCL8T5C2MKgdMc6V98ICi9DI2yHm8pnQwrS34uZzCBUmGsC1ed18cO/+j94FYRJN8OnYr0c7e13jsRo/MQYOEEYZA4cAjV7d5dNyTfAdVdux703UPf+NMCEiam71HAcY1jm9ZbZIxwof/rGUEqp+fCcH22sKRzeYLLaJuLLaBp4tsWSHAdHeuCQNwjdMRoEfy+8JRfLSuE/uhg9qFmCx1yVLHiaxIB/FMkVSEbsbzuwOYWi8sDlFZtRcmt04h/92W+4o2kJqyrIKcD1CQch2j9TdWoMW9Ncv1Yfw+qJFb44YBQEfUPXzvWf7dL+bZh+aeroPFRFzBsnNGT3joOtyxZ8VF+UiE6Airs9Ar8kTjEsvo1kFXq0Zq+g38b6DHA60FcLtFtZjtumzXfdKFI="
     install:
     - mvn -N io.takari:maven:wrapper
     - "./mvnw install -DskipTests=true -Dmaven.javadoc.skip=true -B -V"
