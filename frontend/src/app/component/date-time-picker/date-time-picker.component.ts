@@ -55,7 +55,7 @@ export class DateTimePickerComponent implements ControlValueAccessor, OnInit, Af
 
     private ngControl: NgControl;
 
-    //extra variables for calendar-model
+    // extra variables for calendar-model
     model: Calendar;
 
     constructor(private config: NgbPopoverConfig, private inj: Injector, private calendarSerice: CalendarService, private router: Router) {
@@ -169,21 +169,20 @@ export class DateTimePickerComponent implements ControlValueAccessor, OnInit, Af
     }
 
     /*Submitting date and send to backend */
-    submit(){
-        
-        //Model értékének beállítása:
+    submit() {
+        // Model értékének beállítása:
         this.model = new Calendar();
         this.model.startDate = this.dateString;
         this.model.endDate = this.dateString;
 
-        console.log("Sending startdate: "+this.dateString);
+        console.log('Sending startdate: ' + this.dateString);
 
         this.calendarSerice.addStartDate(this.model)
         .then(() => {
-        //this.router.navigateByUrl('/calendar');
+        // this.router.navigateByUrl('/calendar');
         })
         .catch(() => {
-            console.log("Calendar pick failed");
+            console.log('Calendar pick failed');
         });
 
     }
