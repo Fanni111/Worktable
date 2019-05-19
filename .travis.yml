@@ -27,6 +27,14 @@ matrix:
     - git add -f .
     - git commit -m "Latest javadoc on successful travis build $TRAVIS_BUILD_NUMBER"
     - git push -fq origin master
+
+    deploy:
+      provider: backend
+      skip_cleanup: true
+      github_token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
+      keep_history: true
+      on:
+        branch: master
   
     #- ./javadoc.sh
 
@@ -43,7 +51,7 @@ matrix:
     - npm install -g @angular/cli
 
     deploy:
-      provider: pages
+      provider: frontend
       skip_cleanup: true
       github_token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
       keep_history: true
