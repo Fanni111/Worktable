@@ -27,8 +27,13 @@ matrix:
     - git add -f .
     - git commit -m "Latest javadoc on successful travis build $TRAVIS_BUILD_NUMBER"
     - git push -fq origin master
-  
-    #- ./javadoc.sh
+    deploy:
+      provider: pages
+      skip_cleanup: true
+      github_token: $GITHUB_TOKEN
+      keep_history: true
+      on:
+        branch: master
 
   - language: node_js
     node_js:
@@ -41,3 +46,11 @@ matrix:
       - frontend_development
     before_script:
     - npm install -g @angular/cli
+
+    deploy:
+      provider: pages
+      skip_cleanup: true
+      github_token: $GITHUB_TOKEN
+      keep_history: true
+      on:
+        branch: master
