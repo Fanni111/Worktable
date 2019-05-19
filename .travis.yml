@@ -48,6 +48,7 @@ matrix:
     - npm install -g @angular/cli
 
     after_script:
+    - cd frontend
     - ng build
 
     deploy:
