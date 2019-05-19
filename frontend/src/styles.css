@@ -1,0 +1,30 @@
+/* You can add global styles to this file, and also import other style files */
+@import "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css";
+
+html, body { height: 100%; }
+body { margin: 0; font-family: 'Roboto', sans-serif; }
+
+.navbar-nav a{
+    color: white;
+  
+}
+.navbar-nav a.active-link{
+    color:white;
+    text-decoration: underline;
+} 
+
+.navbar-nav li{
+    display: inline;
+    padding-right: 20px;
+}
+
+
+/*
+.navbar-nav > .active > a {
+    color: white;   
+  }
+
+
+  .nav-item > a:hover {
+    color: aqua;
+  }*/

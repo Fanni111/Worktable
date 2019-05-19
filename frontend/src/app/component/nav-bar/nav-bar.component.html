@@ -1,0 +1,33 @@
+<nav class="navbar navbar-expand-lg navbar navbar-dark bg-primary">
+  <h1 class="navbar-brand mb-0">
+   Worktable
+  </h1>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav">
+      <li *ngIf="!userService.getUserLoggedIn()" class="nav-item">
+        <a routerLink="/" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:
+          true}">Home</a>
+      
+      <li *ngIf="!userService.getUserLoggedIn()" class="nav-item">
+        <a routerLink="/login" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:
+          true}">Login</a>
+      
+      <li *ngIf="!userService.getUserLoggedIn()" class="nav-item">
+        <a routerLink="/registration" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:
+          true}">Register</a>
+
+      <li *ngIf="userService.getUserLoggedIn()" class="nav-item">
+        <a routerLink="/profile" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:
+          true}">Profile</a>
+      
+      <li *ngIf="userService.getUserLoggedIn()" class="nav-item">
+        <a routerLink="/calendar" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:
+          true}">Calendar</a>
+      
+      <li *ngIf="userService.getUserLoggedIn()" class="nav-item">
+        <a routerLink="/" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:
+          true}" (click)="logout()">Logout</a>
+    </ul>
+  </div>
+</nav>
