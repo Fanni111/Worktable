@@ -27,8 +27,13 @@ matrix:
     - git add -f .
     - git commit -m "Latest javadoc on successful travis build $TRAVIS_BUILD_NUMBER"
     - git push -fq origin master
-  
-    #- ./javadoc.sh
+    deploy:
+      provider: pages
+      skip_cleanup: true
+      github_token: $GITHUB_TOKEN
+      keep_history: true
+      on:
+        branch: master
 
   - language: node_js
     node_js:
@@ -45,7 +50,7 @@ matrix:
     deploy:
       provider: pages
       skip_cleanup: true
-      github_token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
+      github_token: $GITHUB_TOKEN
       keep_history: true
       on:
         branch: master
