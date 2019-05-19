@@ -32,7 +32,7 @@ import {LOCALE_ID } from '@angular/core';
 
 import {OverlayContainer} from "@angular/cdk/overlay";
 
-
+import {MatIconModule} from '@angular/material/icon'; 
 
 fontLibrary.add(
   faCalendar,
@@ -52,7 +52,6 @@ fontLibrary.add(
     CalendarComponent,
     DateTimePickerComponent,
     CalendarViewComponent
-
   ],
   imports: [
     BrowserModule,
@@ -60,6 +59,7 @@ fontLibrary.add(
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    MatIconModule,
 
     NgbModule.forRoot(),
     FontAwesomeModule,

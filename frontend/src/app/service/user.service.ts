@@ -23,13 +23,33 @@ export class UserService {
     this.isUserLoggedIn = false;
     this.user = new User();
   }
-
+/*
   async loginUser(user: User){
-    //console.log("USER: "+user.username +"status: "+this.getUserLoggedIn());
-    //this.user = user;
     this.user = await this.http.post<User>(this.url + '/login', JSON.stringify(user), httpOptions).toPromise();
     this.isUserLoggedIn = true;
-    /*console.log("USER: "+this.user);*/
+  }*/
+
+  async login(username: string, password: string): Promise<boolean> {
+    const token = btoa(`${username}:${password}`);
+    httpOptions.headers =
+      httpOptions.headers.set(
+        'Authorization',
+        `Basic ${token}`
+      );
+    try {
+      const user = await this.http.post<User>(
+        `${this.url}/login`,
+        {username, password},
+        httpOptions
+      ).toPromise();
+
+      this.isUserLoggedIn = true;
+      this.user = user;
+      return Promise.resolve(true);
+    } catch (e) {
+      console.log('Error in login!', e);
+      return Promise.resolve(false);
+    }
   }
 
   async registerUser(user: User) /*:Promise<void>*/{

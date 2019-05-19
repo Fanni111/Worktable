@@ -49,7 +49,7 @@ export class LoginFormComponent implements OnInit {
     this.model.password = this.loginForm.value.pass;
     console.log("Submituser: "+ this.model.username);
     console.log("Submit model: "+this.model);
-    this.userService.loginUser(this.model)
+    this.userService.login(this.model.username, this.model.password)
     .then(() => {
       this.router.navigateByUrl('/profile');
     })
