@@ -47,10 +47,6 @@ matrix:
     before_script:
     - npm install -g @angular/cli
 
-    after_script:
-    - cd frontend
-    - ng build
-
     deploy:
       provider: pages
       skip_cleanup: true
